@@ -1,0 +1,124 @@
+/*
+ 20 % chance to move left,
+ 10 % chance to move right
+ 50 % chance to move up
+ 20 % chance to move down
+ */
+
+Walker_ object;
+Walker_ object2;
+Walker_ object3;
+Walker_ object4;
+Walker_ object5;
+Walker_ object6;
+
+void setup() {
+  size(800, 400);
+  background(255, 255, 255);
+  
+  object = new Walker_(200,100);
+  object2 = new Walker_(100,300);
+  object3 = new Walker_(300,200);
+  object4 = new Walker_(500,400);
+  object5 = new Walker_(400,100);
+  object6 = new Walker_(600,400);
+  
+  object.chance1 = 0.5;
+  object.chance2 = 0.8;
+  object.chance3 = 0.9;
+  
+  object2.chance1 = 0.1;
+  object2.chance2 = 0.6;
+  object2.chance3 = 0.8;
+  
+  object3.chance1 = 0.4;
+  object3.chance2 = 0.2;
+  object3.chance3 = 0.1;
+  
+  object4.chance1 = 0.8;
+  object4.chance2 = 0.4;
+  object4.chance3 = 0.3;
+  
+  object5.chance1 = 0.1;
+  object5.chance2 = 0.8;
+  object5.chance3 = 0.5;
+  
+  object6.chance1 = 0.3;
+  object6.chance2 = 0.1;
+  object6.chance3 = 0.7;
+  
+}
+
+
+void draw() {
+  //background(30);
+  
+  object.draw();
+  object2.draw();
+  object3.draw();
+  object4.draw();
+  object5.draw();
+  object6.draw();
+}
+
+
+
+CLASS
+class Walker_ {
+
+    float chance1;
+    float chance2;
+    float chance3;
+
+    float choice;
+  
+    String type;
+  
+    PVector position;
+  
+   
+    
+  
+  Walker_(float startX,float startY) {
+    
+   
+       
+    type = "ellipse";
+    chance1 = 0.2;
+    chance2 = 0.3;
+    chance3 = 0.8;
+    
+    position = new PVector(startX, startY);
+  }
+  
+  void draw () {
+    
+    choice = random(1);
+    //println(choice);
+    
+    if (choice < chance1) {
+      position.x = position.x - 1;
+    }
+    
+
+    if (choice > chance1 && choice < chance2) {
+      position.x = position.x + 1;
+    }
+
+    if (choice > chance2 && choice < chance3) {
+      position.y = position.y - 1;
+    }
+
+    if (choice > chance3 && choice < 1.0)
+    {
+      position.y = position.y + 1;
+    }
+    
+    stroke(0);
+  ellipse(position.x, position.y, 5, 5); 
+  
+  }
+  
+  if(type == "ucgen
+  
+}
